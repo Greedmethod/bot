@@ -1,0 +1,14 @@
+{
+    "permissions": [
+        {
+            "user_id": "695b3b55d2aef312b814781c",
+            "username": "pagen__420",
+            "permissions": ["admin", "moderator", "vip", "emote", "teleport", "print", "say", "walk"]
+        },
+        {
+            "user_id": "695b3b55d2aef312b814781c",
+            "username": "Pagen__420",
+            "permissions": ["admin", "moderator", "vip", "emote", "teleport", "print", "say", "walk"]
+        }
+    ]
+}
