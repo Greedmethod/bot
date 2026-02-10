@@ -10,6 +10,7 @@ class Command:
         self.aliases = ['walk']
         self.permissions = ["walk"]
         self.cooldown = 5
+        self.permissions = ["come"]
 
     async def execute(self, user: User, args: list, message: str):
         response = await self.bot.highrise.get_room_users()

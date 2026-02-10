@@ -10,6 +10,7 @@ class Command:
         self.aliases = ['location', 'coords']
         self.permissions = ["print"]
         self.cooldown = 5
+        self.permissions = ["print"]
 
     async def execute(self, user: User, args: list, message: str):
         prefix = config.prefix

@@ -3,11 +3,32 @@
         {
             "user_id": "695b3b55d2aef312b814781c",
             "username": "pagen__420",
-            "permissions": ["admin", "moderator", "vip", "emote", "teleport", "print", "say", "walk"]
+            "permissions": [
+                "admin",
+                "moderator",
+                "vip",
+                "emote",
+                "teleport",
+                "print",
+                "say",
+                "walk",
+                "come"
+            ]
         },
         {
-            "username": "legacy_user_without_id",
-            "permissions": ["emote"]
+            "user_id": "695b3b55d2aef312b814781c",
+            "username": "Pagen__420",
+            "permissions": [
+                "admin",
+                "moderator",
+                "vip",
+                "emote",
+                "teleport",
+                "print",
+                "say",
+                "walk",
+                "come"
+            ]
         }
     ]
 }
