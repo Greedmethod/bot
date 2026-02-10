@@ -53,8 +53,12 @@ class Command:
         # Random emote name
         emote_name = random.choice(self.emotes)
 
+        # Normalize text once for target detection
+        normalized_args = [arg.strip() for arg in args if arg.strip()]
+        lowered_args = [arg.lower() for arg in normalized_args]
+
         # Emote everyone
-        if args and args[0].lower() == "all":
+        if lowered_args and lowered_args[0] == "all":
             room_users_response = await self.bot.highrise.get_room_users()
             users = [u for u, _ in room_users_response.content]
 
@@ -63,8 +67,17 @@ class Command:
             return
 
         # Emote a specific user
-        if args:
-            target_username = args[0].lstrip("@").lower()
+        if lowered_args and lowered_args[0] in {"me", "myself", "self"}:
+            await self.bot.highrise.send_emote(emote_name, user.id)
+            return
+
+        # Emote a specific user (supports @mention or plain username)
+        if normalized_args:
+            target_token = normalized_args[0]
+            if target_token.lower().startswith("@") and len(target_token) > 1:
+                target_username = target_token[1:].lower()
+            else:
+                target_username = target_token.lower()
 
             room_users_response = await self.bot.highrise.get_room_users()
             users = [u for u, _ in room_users_response.content]
