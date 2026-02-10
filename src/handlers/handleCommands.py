@@ -61,7 +61,12 @@ class CommandHandler:
 
     async def handle_command(self, user, message):
         """handle a chat message that starts with prefix for example /"""
-        parts = message[1:].split()  # here we split the "/" from the name
+        content = message[1:].strip()
+        if not content:
+            return
+        parts = content.split()  # here we split the "/" from the name
+        if not parts:
+            return
         command_name = parts[0]
         args = parts[1:]
         command = self.commands.get(command_name)
