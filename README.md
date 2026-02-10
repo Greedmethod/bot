@@ -59,6 +59,11 @@ PATH: config/permission.json
 }
 ```
 
+
+## **🧩 Built-in Commands**
+
+- `/ping` (alias: `/latency`) — replies with `pong`.
+
 ## Note
 
 While you have the freedom to modify this package to suit your needs, please refrain from claiming it as your own. Let's respect the efforts put into creating and sharing this resource.
