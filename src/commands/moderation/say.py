@@ -1,5 +1,5 @@
 from highrise import User
-from config.config import config
+from config.config import config, messages
 
 
 class Command:
@@ -13,5 +13,11 @@ class Command:
 
     async def execute(self, user: User, args: list, message: str):
         prefix = config.prefix
-        text = message.replace(f"{prefix}say", "").strip()
+        text = " ".join(args).strip()
+        if not text:
+            await self.bot.highrise.send_whisper(
+                user.id,
+                f"{messages.invalidUsage.format(prefix=prefix, commandName='say', args='<message>')}"
+            )
+            return
         await self.bot.highrise.chat(text)
