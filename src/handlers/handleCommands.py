@@ -12,7 +12,11 @@ def get_user_permissions(user: User):
     user_permissions = []
 
     for permission in data["permissions"]:
-        if permission["username"] == user.username:
+        permission_user_id = permission.get("user_id")
+        permission_username = permission.get("username")
+
+        # Prefer immutable IDs. Fall back to username for legacy entries.
+        if permission_user_id == user.id or (permission_user_id is None and permission_username == user.username):
             user_permissions = permission["permissions"]
             break
 

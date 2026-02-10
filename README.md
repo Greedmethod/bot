@@ -44,13 +44,13 @@ class authorization:
     room = 'change-me'
     token = 'change-me'
 ```
-PATH: config/permission.json
+PATH: config/permissions.json
 ```json
 {
     "permissions": [
         {
             "user_id": "change-me",
-            "username": "change-me",
+            "username": "optional-legacy-fallback",
             "permissions": [
                 "emote"
             ]
@@ -58,6 +58,8 @@ PATH: config/permission.json
     ]
 }
 ```
+
+`user_id` is the primary key used for permission resolution. `username` is kept only for backward compatibility when `user_id` is missing.
 
 ## Note
 

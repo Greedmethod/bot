@@ -8,6 +8,7 @@ class Command:
         self.name = "come"
         self.description = "Teleport a player to a specific position"
         self.aliases = ['walk']
+        self.permissions = ["walk"]
         self.cooldown = 5
         self.permissions = ["come"]
 
