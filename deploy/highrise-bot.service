@@ -1,0 +1,16 @@
+[Unit]
+Description=Highrise Python Bot
+After=network.target
+
+[Service]
+Type=simple
+User=highrisebot
+Group=highrisebot
+WorkingDirectory=/opt/highrise-bot
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/highrise-bot/.venv/bin/python main.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
