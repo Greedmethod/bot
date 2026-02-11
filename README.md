@@ -22,7 +22,7 @@ pip install highrise-bot-sdk==23.1.0b10
 
 1. Clone this repository on your VPS:
 ```bash
-git clone <your-repo-url> highrise-bot
+git clone https://github.com/Greedmethod/bot highrise-bot
 cd highrise-bot
 ```
 
