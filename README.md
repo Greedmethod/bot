@@ -16,6 +16,44 @@ pip install highrise-bot-sdk==23.1.0b10
 - Flexible configuration file for easy modifications.
 
 
+
+
+## **🖥️ Run on Ubuntu 22.04 VPS**
+
+1. Clone this repository on your VPS:
+```bash
+git clone <your-repo-url> highrise-bot
+cd highrise-bot
+```
+
+2. Configure your bot credentials in `config/config.py` and permissions in `config/permissions.json`.
+
+3. Run the automated installer as root (creates a dedicated `highrisebot` user, virtualenv, and systemd service):
+```bash
+sudo bash deploy/install_ubuntu.sh
+```
+
+4. Start and inspect the service:
+```bash
+sudo systemctl start highrise-bot.service
+sudo systemctl status highrise-bot.service
+```
+
+5. Check logs:
+```bash
+sudo journalctl -u highrise-bot.service -f
+```
+
+### Manual setup (optional)
+```bash
+sudo apt update
+sudo apt install -y python3 python3-venv python3-pip
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python main.py
+```
+
 ## **🎐 Usage**
 To start the bot:
 ```
